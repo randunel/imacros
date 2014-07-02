@@ -1,0 +1,94 @@
+/*
+(c) Copyright 2009 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* styles for options dialog */
+
+
+body {
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+#title {
+    display: -webkit-box;
+    font-size: 1.1em;
+    margin: 20px;
+    height: 48px !important;
+    padding-left: 60px;
+    -webkit-box-align: center;
+    font-weight: bold;
+    background-image: url("logo48.png");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.settings-container {
+    border: thin solid black;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 25px;
+    padding: 7px;
+    width: 60%;
+    min-width: 400px;
+}
+
+.settings-container > .header {
+    display: -webkit-box;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: -25px;
+}
+
+.radio-container {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.radio-container:hover {
+    background-color: #fafafa;
+}
+
+.radio-description {
+    margin-left: 30px;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.path-field {
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 0px;
+}
+
+/* overwrite 'display' of the .button from common.css */
+.button {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.browse-button {
+    background-color: #ffffff;
+    background-image: url("browse.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 16px;
+    margin-left: 5px;
+    border: 0px;
+}
+
+.browse-button:hover {
+    border: 1px solid #aaaaaa;
+}
+
+.wide {
+    border: 1px solid black;
+    /* width: 100% !important; */
+}
+
+

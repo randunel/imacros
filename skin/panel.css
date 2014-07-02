@@ -1,0 +1,374 @@
+/*
+(c) Copyright 2009 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* styles for toolstrip area */
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#mole {
+    margin: 0px;
+    padding: 3px;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#tree-switcher-box {
+    margin-top: 2px;
+    margin-bottom: 0px;
+    font-family: sans-serif;
+    font-size: 0.7em;
+    width: 70%;
+    margin-left: 5px;
+    margin-bottom: -1px;
+}
+
+#tree-switcher-box > .tab {
+    display: none;
+}
+
+#tree-switcher-box .tab-label {
+    color: #555555;
+    background: #eeeeee;
+    cursor: pointer;
+    display: block;
+    width: 50%;
+    height: 16px;
+    position: relative;
+    bottom: 0px;
+    text-align: center;
+    border: 1px solid black;
+    margin-left: -1px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#radio-bookmarks-tree:checked  ~ #radio-bookmarks-tree-label {
+    background-color: #ffffdc;
+    color: black;
+}
+#radio-files-tree:checked  ~ #radio-files-tree-label {
+    background: #ffffff;
+    color: black;
+}
+
+
+
+
+#view {
+    /* margin: 3px; */
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+
+#tree-view {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+
+#tree-iframe {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    border: thin solid black;
+    width: 100%;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#macro-view {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+
+#macro-iframe {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    border: thin solid black;
+    width: 100%;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.loop-value {
+    width: 33px;
+    font-size: 9px;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+
+#loop-box {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+
+#play-button {
+    /* background-image: url("play.png"); */
+}
+
+#play-button[disabled="true"] {
+    /* background-image: url("play-disabled.png"); */
+}
+
+#stop-replaying-button {
+    /* background-image: url("stop.png"); */
+}
+
+#edit-button {
+    /* background-image: url("edit.png"); */
+}
+
+#edit-button[disabled="true"] {
+    /* background-image: url("edit-disabled.png"); */
+}
+
+
+#pause-button {
+    /* background-image: url("pause.png"); */
+}
+
+#unpause-button {
+    /* background-image: url("play.png"); */
+}
+
+
+
+#settings-button {
+    /* background-image: url("settings.png"); */
+}
+
+#loop-button {
+    /* background-image: url("loop.png"); */
+}
+
+#loop-button[disabled="true"] {
+    /* background-image: url("loop-disabled.png"); */
+}
+
+
+
+
+
+#logo-or-info {
+    min-width: 100px;
+}
+
+#logo-and-links {
+    padding-bottom: 5px;
+}
+
+/* logo image's div */
+#logo-image {
+}
+
+.panel-link-div {
+    margin: 2px;
+}
+
+.panel-link {
+    margin-left: 10px;
+    padding: 3px;
+}
+
+#links {
+    font-family: Arial, sans-serif;
+    font-size: small;
+}
+
+#info-div {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    margin: 5px;
+}
+
+#info-area {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100px;
+    -webkit-box-flex: 1;
+    box-flex: 1; */
+    background-color: #a8ffab;
+    border: 1px solid black;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: small;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#info-area[type="error"] {
+    background-color: #ffffe1;
+}
+
+#info-buttons-container {
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.info-buttons {
+   width: 16px;
+   border: 0px;
+   margin-left: 5px;
+   margin-right: 5px;
+   background-color: #ffffff;
+   background-position: center;
+   border: 1px solid #ffffff;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.info-buttons:hover {
+    border: 1px solid #aaaaaa;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#info-edit-button {
+    background-image: url("edit.png");
+}
+
+#info-help-button {
+    background-image: url("help.png");
+}
+
+#info-close-button {
+    background-image: url("close.png");
+}
+
+
+#saveas-box {
+}
+
+#record-button {
+    /* background-image: url("record.png"); */
+}
+
+#stop-recording-button {
+    /* background-image: url("stop.png"); */
+}
+
+
+#saveas-button {
+    /* background-image: url("saveas.png"); */
+}
+
+#capture-button {
+    /* background-image: url("capture.png"); */
+}
+
+#tabs-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#tabs-container .tab-label {
+    color: #555555;
+    background-color: #eeeeee;
+    cursor: pointer;
+    display: block;
+    width: 30%;
+    height: 20px;
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    border-bottom: 0px;
+    border-radius: 3px 3px 0 0;
+    margin-right: 2px;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+#tabs-container .tab {
+    display: none;
+}
+
+#play-tab:checked  ~ div #play-tab-label,
+#record-tab:checked  ~ div #record-tab-label,
+#manage-tab:checked  ~ div #manage-tab-label {
+    background-color: #ffffff;
+    color: black;
+}
+
+#tabs-content {
+    background-color: #ffffff;
+    border: 1px solid #aaaaaa;
+    padding: 7px;
+    /* fixed height for tab content */
+    height: 200px;
+}
+
+#tabs-content > div {
+    display:none;
+}
+
+#play-tab:checked ~ #tabs-content #play-tab-content,
+#record-tab:checked ~ #tabs-content #record-tab-content,
+#manage-tab:checked ~ #tabs-content #manage-tab-content {
+    position: static;
+    left: 0;
+    display: block;
+}
+
+
+#alertfox-container {
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+#alertfox-caption {
+    font-family: sans-serif;
+    font-size: 0.9em;
+    margin-top: -22px;
+    margin-left: 10px;
+    margin-bottom: 7px;
+}
+
+#idrone-checkbox-container {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: -2px;
+}
+
+.af-button[waiting='true'] {
+    color: #bbbbbb;
+    cursor: default;
+    padding-left: 22px;
+    background-image: url('waiting_16x16.gif');
+    background-repeat: no-repeat;
+    background-position: 3px;
+}

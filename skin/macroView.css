@@ -1,0 +1,73 @@
+/*
+(c) Copyright 2012 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* Turn off list bullets */
+
+body {
+    margin: 0px;
+}
+  
+#lines {
+    margin: 0px;
+    margin-top: 18px;
+    padding: 0px;
+    font-size: 0.9em;
+    border-collapse: collapse;
+}
+
+#status {
+    white-space: nowrap;
+    margin: 0px;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-left: 7px;
+    font-size: 11px;
+    font-family: monospace;
+}
+
+#status-div {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid #666666;
+}
+
+#status-div[type="info"] {
+    background-color: #afffaf;
+}
+
+#status-div[type="warning"] {
+    background-color: #ffabab;
+}
+
+
+td, tr {
+    margin: 0px;
+    padding:0px;
+    border: 0px;
+}
+
+tr[selected="true"] {
+    background-color: #eaf1fb;
+}
+
+.macro-line {
+    white-space: nowrap;
+    font-family: monospace;
+    padding-left: 2px;
+}
+
+.macro-line[commented="true"] {
+    color: #77f34b;
+}
+
+
+.line-number {
+    font-family: monospace;
+    color: #cccccc;
+    border-right: 1px solid #cccccc;
+    padding-right: 2px;
+    text-align: right;
+}

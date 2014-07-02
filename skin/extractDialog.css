@@ -1,0 +1,41 @@
+/*
+(c) Copyright 2010 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* styles for extract dialog */
+
+
+#caption {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+#data-field {
+    width: 100%;
+    height: 60%;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#note {
+    font-size: 11px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+
+#buttons {
+    position: absolute;
+    bottom: 15px;
+    left: 45%;
+}
+
+#ok-button {
+    width: 30px;
+    background-image: url("ok.png");
+}
+

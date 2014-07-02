@@ -1,0 +1,10 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+TAB T=1     
+URL GOTO=http://demo.imacros.net/Automate/TagPosition
+'
+'All links have the same name, so we use the POS= parameter to distinguish
+'between the 1st, 2nd and 3rd link.
+'
+TAG POS={{!LOOP}} TYPE=A ATTR=TXT:Click<SP>to<SP>open<SP>this<SP>page   
+WAIT SECONDS=1
+BACK  

@@ -1,0 +1,49 @@
+/*
+(c) Copyright 2011 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* styles for saveAs dialog */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    font-size: small;
+    min-width: 250px;
+}
+
+
+#main-container {
+    margin: 0px;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    -webkit-border-radius: 5px;
+}
+
+#macro-name {
+    margin: 10px;
+    min-width: 80%;
+    display: -webkit-box;
+}
+
+#buttonpack {
+    -webkit-box-sizing: border-box;
+}
+
+#ok-button {
+    background-image: url("ok.png");
+}
+
+#cancel-button {
+    background-image: url("cancel.png");
+}
+
+#tree-switcher-box {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.tree-switcher {
+    font-size: small;
+}

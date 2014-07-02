@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>iMacros</title>
+    <link rel="stylesheet" type="text/css"
+          href="skin/common.css" />
+    <link rel="stylesheet" type="text/css"
+          href="skin/treeView.css" />
+    <script src="fileView.js"></script>
+    <script src="utils.js"></script>
+    <script src="AsyncFileIO.js"></script>
+    <script src="mktree.js"></script>
+
+  </head>
+  <body treetype="files">
+    <div id="no-file-io-message" hidden="true">
+      <p>
+        Nothing to see here yet :-(
+      </p>
+      <p>
+        The new Chrome version no longer allows extensions to access the
+        file system. So by default iMacros stores the macros inside
+        bookmarks.
+      </p>
+      <p>
+        If you want to read and write macros as text files from/to your
+        hard drive, please download
+        the <strong><span id="afio-installer-link" class="a-link">
+          iMacros for Chrome File Access Installer
+        </span></strong>.
+      </p>
+      <p>
+        The file access module is a small Windows, Mac, and Linux application
+        that allows iMacros for Chrome to save files and share them with
+        its <span id="imacros-ie-link" class="a-link">
+          iMacros for Internet Explorer</span> and
+        <span id="imacros-firefox-link" class="a-link">iMacros for Firefox</span>
+        siblings.
+      </p>
+    </div>
+    <div id="loading_message" hidden="true">
+      Scanning directory...
+    </div>
+    <div id="context-menu" hidden="true">
+      <ul class="context-menu-ul">
+        <!-- <li><a id="context-run" href="#">Run</a></li> -->
+        <li id="context-edit" class="context-menu-item">
+          <span>Edit Macro</span>
+        </li>
+        <li  id="context-convert" class="context-menu-item">
+          <span>Convert Macro</span>
+        </li>
+        <li  id="context-makedir" class="context-menu-item">
+          <span>New Folder</span>
+        </li>
+        <li id="context-rename" class="context-menu-item">
+          <span>Rename</span>
+        </li>
+        <li id="context-delete" class="context-menu-item">
+          <span>Remove</span>
+        </li>
+        <li class="context-menu-sep"></li>
+        <li id="context-refresh" class="context-menu-item">
+          <span>Refresh Tree</span>
+        </li>
+      </ul>
+    </div>
+    
+    
+    <ul id="tree" class="tree">
+    </ul>
+    <div id="imacros-bookmark-div" style="display:none">
+      <textarea id="imacros-macro-container"></textarea>
+    </div>
+  </body>
+
+</html>

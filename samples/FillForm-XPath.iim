@@ -1,0 +1,20 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+TAB T=1
+URL GOTO=http://demo.imacros.net/Automate/TestForm1
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[1]/input[1]" CONTENT="Tom Tester"
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[2]/select" CONTENT=%Pizza
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[3]/select" CONTENT=%Coke
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[4]/input[2]" CONTENT=YES
+
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[5]/select" CONTENT=$Apple<SP>Pie:$Fruits
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[6]/input[1]" CONTENT=YES
+SET !ENCRYPTION NO
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[6]/input[2]" CONTENT=tester
+
+TAG XPATH="//form[@id='demo']/fieldset[1]/ol/li[7]/textarea" CONTENT="Hi!\n\n \t iMacros can fill  forms;-)\n\nTom"
+
+
+TAG XPATH="//form[@id='demo']/fieldset[2]/button"
+
+WAIT SECONDS=5
+URL GOTO=http://demo.imacros.net/Automate/OK

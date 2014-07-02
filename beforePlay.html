@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>iMacros</title>
+    <link rel="stylesheet" type="text/css"
+          href="skin/common.css" />
+    <link rel="stylesheet" type="text/css"
+          href="skin/beforePlay.css" />
+    <script src="beforePlay.js"></script>
+    <script src="utils.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="message-div">
+        <span id="message">
+          You are about to play macro "{{macroname}}".
+          You can view or edit its code before playing.
+        </span>
+      </div>
+      <div id="confirm-div">
+        <div id="checkbox-div">
+          <input id="checkbox" type="checkbox" checked="true"/>
+          <span>Show this dialog next time</span>
+        </div>
+      </div>
+      <div id="buttons">
+        <div id="play-button" class="button icon-button">
+          <span>Play</span>
+        </div>
+        <div id="edit-button" class="button icon-button">
+          <span>Edit/View</span>
+        </div>
+        <div id="cancel-button" class="button icon-button">
+          <span>Cancel</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

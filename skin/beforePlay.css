@@ -1,0 +1,50 @@
+/*
+(c) Copyright 2009 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* styles for beforePlay dialog */
+
+#container {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+#buttons {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-orient: horizontal;
+}
+
+#message-div {
+    border: 1px solid #aaaaaa;
+    -webkit-border-radius: 3px;
+    padding: 7px;
+}
+
+#message {
+    padding: 0px;
+    margin: 0px;
+}
+
+#checkbox-div {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    padding: 5px;
+    font-size: small !important;
+    font-family: Arial, sans-serif;
+    vertical-align: middle;
+}
+
+
+#play-button {
+    background-image: url("play.png");
+}
+
+#edit-button {
+    background-image: url("edit.png");
+}
+
+#cancel-button {
+    background-image: url("cancel.png");
+}

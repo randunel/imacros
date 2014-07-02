@@ -1,0 +1,216 @@
+<html>
+  <head>
+    <title>iMacros</title>
+    <link rel="stylesheet" type="text/css" href="skin/common.css" />
+    <link rel="stylesheet" type="text/css" href="skin/panel.css" />
+    <script src="version.js" > </script>
+    <script src="utils.js" > </script>
+    <script src="panel.js"> </script>
+    <script src="SOAPClient.js"> </script>
+    <script src="AsyncFileIO.js"> </script>
+  </head>
+  <body>
+
+    <div id="mole" class="vbox">
+      
+      <div id="view" class="vbox centered">
+        <div id="tree-switcher-box" class="hbox">
+          <!-- <span>Macro Storage:</span> -->
+          <input id="radio-files-tree" class="tab"
+                 checked="yes"
+                 type="radio" name="tree-view"></input>
+          <input id="radio-bookmarks-tree" class="tab"
+                 type="radio" name="tree-view"></input>
+          <label for="radio-files-tree"
+                 id="radio-files-tree-label"
+                 class="tab-label" >Files</label>
+          <label for="radio-bookmarks-tree"
+                 id="radio-bookmarks-tree-label"
+                 class="tab-label">Bookmarks</label>
+        </div>
+        <div class="box" id="tree-view" >
+          <iframe id="tree-iframe" src="fileView.html"></iframe>
+        </div>
+        <div class="box" id="macro-view" hidden="true">
+          <iframe id="macro-iframe" src="macroView.html"></iframe>
+        </div>
+      </div>
+
+      
+      <div id="tabs-container" class="vbox">
+        <input id="play-tab" class="tab" type="radio"
+               name="main-tabs" checked="checked" />
+	<input id="record-tab" class="tab" type="radio"
+               name="main-tabs" />
+	<input id="manage-tab" class="tab" type="radio"
+	       name="main-tabs" />
+
+        <div class="hbox">
+          <label for="play-tab" id="play-tab-label"
+                 class="tab-label">Play</label>
+	  <label for="record-tab" id="record-tab-label"
+                 class="tab-label">Record</label>
+	  <label for="manage-tab" id="manage-tab-label"
+                 class="tab-label">Manage</label>
+        </div>
+
+	<div id="tabs-content">
+          <div id="play-tab-content" >
+            <div class="vbox">
+
+              <div id="play-button" class="button"
+                   title="Play selected macro">
+                <span>Play Macro</span>
+              </div>
+              <div id="pause-button" class="button" collapsed="true"
+                   title="Pause replaying">
+                <span>Pause</span>
+              </div>
+              <div id="stop-replaying-button" class="button" disabled="true"
+                   title="Stop replaying">
+                <span>Stop</span>
+              </div>
+
+              <div id="loop-box" class="vbox">
+                <div class="hbox centered">
+                  <span>Play macro repeatedly:</span>
+                </div>
+                <div class="hbox centered">
+                  <div class="hbox" style="font-size:10px; padding: 5px;">
+                    Current:
+                    <input id="current-loop" class="loop-value"
+                           type="number"
+                           min="1"
+                           value="1"/>
+                    Max:
+                    <input id="max-loop" class="loop-value"
+                           type="number"
+                           min="1"
+                           value="3"/>
+                  </div>
+                </div>
+              </div>
+              <div id="loop-button" class="button"
+                   title="Play macro repeatedly">
+                <span>Play Loop</span>
+              </div>
+
+            </div>
+          </div> <!-- play-tab-content -->
+
+          <div id="record-tab-content">
+            <div class="vbox">
+              <div id="record-button" class="button"
+                   title="Start macro recording">
+                <span>Record Macro</span>
+              </div>
+              <div id="stop-recording-button" class="button" disabled="true"
+                   title="Stop recording">
+                <span>Stop</span>
+              </div>
+              <div id="saveas-button" class="button" disabled="true"
+                   title="Make web-page archive">
+                <span>Save Page</span>
+              </div>
+              <div id="capture-button" class="button" disabled="true"
+                   title="Take screenshot of web-page">
+                <span>Take Screenshot</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div id="manage-tab-content">
+            <div class="vbox">
+              
+              <div id="edit-button" class="button"
+                   title="Edit selected macro">
+                <span>Edit Macro</span>
+              </div>
+              
+              <div id="settings-button" class="button"
+                   title="Open settings page">
+                <span>Settings</span>
+              </div>
+
+              <div id="alertfox-container" class="vbox">
+                <div id="alertfox-caption">Alertfox</div>
+                <div class="vbox">
+                  <div id="local-test-button" class="button af-button"
+                       disabled="true"
+                       title="Perform local test">
+                    <span>Local Test</span>
+                  </div>
+                  <div id="idrone-checkbox-container">
+                    <input id="idrone-checkbox"
+                           type="checkbox" name="idrone-checkbox"></input>
+                    <label id="idrone-checkbox-label"
+                           for="idrone-checkbox">
+                    Allow iDrone Syntax
+                    </label>
+                    <span id="idrone-link" class="a-link">(?)</span>
+                  </div>
+                </div>
+                <div id="online-test-button" class="button af-button"
+                     disabled="true"
+                     title="Perform online test">
+                  <span>Online Test</span>
+                </div>
+                <div id="af-upload-button" class="button af-button"
+                     disabled="true"
+                     title="Upload macro to Alertfox">
+                  <span>Upload</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- tabs-container -->
+
+      <div id="logo-or-info" class="centered hbox">
+        <div id="logo-and-links" class="centered box">
+          <div class="box">
+            <div id="logo-image" class="box">
+              <img src="skin/logo128.png" style="width:70px;height:70px;"/>
+            </div>
+            <div id="links" class="vbox">
+              <div class="panel-link-div">
+                <span id="home-link" class="a-link panel-link"> Home </span>
+              </div>
+              <div class="panel-link-div">
+                <span id="wiki-link" class="a-link panel-link"> Wiki </span>
+              </div>
+              <div class="panel-link-div">
+                <span id="forum-link" class="a-link panel-link"> Forum </span>
+              </div>
+            </div>
+          </div>
+        </div> <!-- logo and links -->
+        
+        <div id="info-div" class="vbox" hidden="true">
+          <textarea id="info-area" class="box"></textarea>
+          <!-- <div id="info-area" class="box"></div> -->
+          <div id="info-buttons-container" class="centered hbox">
+            <div id="info-edit-button"
+                 class="button info-buttons"
+                 title="Edit macro"
+                 ></div>
+            <div id="info-help-button"
+                 class="button info-buttons"
+                 title="More info"
+                 ></div>
+            <div id="info-close-button"
+                 class="button info-buttons"
+                 title="Close"
+                 ></div>
+          </div>
+        </div>
+      </div> <!-- logo or info display -->
+
+    </div> <!-- mole -->
+    
+  </body>
+</html>
+

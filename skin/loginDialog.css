@@ -1,0 +1,42 @@
+/*
+(c) Copyright 2012 iOpus Software GmbH - http://www.iopus.com
+*/
+
+/* styles for login dialog */
+
+body {
+    font-family: Verdana, Geneva, Arial, sans-serif;
+}
+
+  
+#message {
+    /* margin-left: 20px; */
+    /* margin-right: 20px; */
+    font-size: 12px;
+}
+
+#username-and-password {
+    font-size: 12px;
+}
+
+#username {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#password {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#buttons {
+    margin-top: 10px;
+}
+
+#ok-button {
+    background-image: url("ok.png");
+}
+
+#cancel-button {
+    background-image: url("cancel.png");
+}

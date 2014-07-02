@@ -1,0 +1,41 @@
+{
+   "background": {
+      "page": "bg.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "skin/logo19.png",
+         "38": "skin/logo38.png"
+      },
+      "default_title": "iMacros for Chrome"
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "content_scripts/bookmarks_handler.js", "content_scripts/si_listener.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file://*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "utils.js", "content_scripts/connector.js", "content_scripts/recorder.js", "content_scripts/player.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file://*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Automate your web browser. Record and replay repetitious work",
+   "homepage_url": "http://alertfox.com",
+   "icons": {
+      "128": "skin/logo128.png",
+      "16": "skin/logo16.png",
+      "48": "skin/logo48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIQD99cTZgDNx/kTUq0e8DGO22FdPWT1DfADezOKLkJLsYZbYLuUiitZgeE1gRDA7mNedBryk2sxMNIv5yHgOWIe4Q8bEql7d+CDPEAUT0GTDIhFWvUxVDnDTGnZdy9Tam0e+xD8mEOr9/YQ9NsMUQbm3gxo42bxbiaWgAnGX2BQIDAQAB",
+   "manifest_version": 2,
+   "name": "iMacros for Chrome",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "bookmarks", "management", "proxy", "cookies", "pageCapture", "webNavigation", "notifications", "webRequest", "webRequestBlocking", "nativeMessaging", "\u003Call_urls>" ],
+   "sandbox": {
+      "pages": [ "sandbox.html" ]
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "8.0.7",
+   "web_accessible_resources": [ "skin/logo24.png" ]
+}

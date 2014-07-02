@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>iMacros extract dialog</title>
+    <link rel="stylesheet" type="text/css"
+          href="skin/common.css" />
+    <link rel="stylesheet" type="text/css"
+          href="skin/extractDialog.css" />
+    <script src="utils.js"></script>
+    <script src="extractDialog.js"></script>
+  </head>
+  <body>
+    <div id="container" class="vbox">
+      <span id="caption">Extracted Data</span>
+      <div class="hbox centered">
+        <textarea class="hbox" id="data-field"></textarea>
+      </div>
+
+      <div id="note"><span>This popup is for testing. It does <b>not</b> appear when IM is controlled by the Scripting Interface. If you want to run the macro manually, you can disable this popup by adding <code>SET&nbsp;!EXTRACT_TEST_POPUP&nbsp;NO</code> to your macro</span>
+      </div>
+    </div>
+    <div id="buttons" class="hbox centered">
+      <div id="ok-button" class="button icon-button">
+        <span>OK</span>
+      </div>
+    </div>
+    <div>
+
+  </body>
+</html>

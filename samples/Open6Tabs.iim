@@ -1,0 +1,33 @@
+VERSION BUILD=5301016 RECORDER=CR
+SET !VAR1 1
+'Start at TAB T=2, as we do not want to change "start" tab of user
+'Open TAB, select it, load website
+TAB OPEN NEW
+ADD !VAR1 1
+TAB T={{!VAR1}}
+URL GOTO=http://www.iopus.com
+'Open TAB, select it, load website
+TAB OPEN NEW
+ADD !VAR1 1
+TAB T={{!VAR1}}
+URL GOTO=http://forum.iopus.com
+'Open TAB, select it, load website
+TAB OPEN NEW
+ADD !VAR1 1
+TAB T={{!VAR1}}
+URL GOTO=http://wiki.imacros.net
+'Open TAB, select it, load website
+TAB OPEN NEW
+ADD !VAR1 1
+TAB T={{!VAR1}}
+URL GOTO=http://www.alertfox.com
+'Open TAB, select it, load website
+TAB OPEN NEW
+ADD !VAR1 1
+TAB T={{!VAR1}}
+URL GOTO=http://status.iopus.com/
+'Open TAB, select it, load website
+TAB OPEN NEW
+ADD !VAR1 1
+TAB T={{!VAR1}}
+URL GOTO=http://wiki.alertfox.com

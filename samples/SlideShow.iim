@@ -1,0 +1,20 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+'
+'Press LOOP to start this macro
+'
+'Remove the URL command to make this
+' an UNIVERSAL Slide Show Macro! 
+TAB T=1     
+URL GOTO=http://demo.imacros.net/Automate/Images
+'You can *start* the loop at another value with SET !LOOP. The default start value is 1.
+'Since the SET !LOOP command sets a START value, it works only at the first loop.
+'SET !LOOP 2
+TAG POS={{!loop}} TYPE=A ATTR=HREF:http://*.jpg  
+'Use the SAVEAS command if you want to save the pictures
+'
+'Give the user time to press PAUSE 
+WAIT SECONDS=3
+
+'Go back to start page
+'Use !urlstart if you removed the URL GOTO= command at the top of the macro
+'URL GOTO={{!urlstart}} 

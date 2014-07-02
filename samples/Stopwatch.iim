@@ -1,0 +1,45 @@
+﻿VERSION BUILD=8031994
+TAB T=1
+TAB CLOSEALLOTHERS 
+'
+'We can change the folder where the performance log file is going to be saved 
+'by setting !FOLDER_STOPWATCH. Otherwise it is saved in iMacros\Downloads folder
+'SET !FOLDER_STOPWATCH c:\Temp  
+'Note: Use SET !FOLDER_STOPWATCH NO if you do NOT need a response time log file 
+'(for example, if you retrieve the values with the Scripting Interface via iimGetStopwatch)
+'SET !FOLDER_STOPWATCH NO
+'SET !FILESTOPWATCH C:\Temp\demo-stopwatch.csv  
+
+'
+'Start reponse time measurement  
+'Measure total macro runtime
+STOPWATCH ID=Total
+'Measure load time for first page
+STOPWATCH ID=Firstpage
+URL GOTO=http://demo.imacros.net/Automate/StopWatchDemo
+STOPWATCH ID=Firstpage 
+
+TAG POS=1 TYPE=A ATTR=HREF:http://demo.imacros.net/Automate/AutoDataEntry   
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:/Automate/FormSubmit ATTR=NAME:fname CONTENT=Tom
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:/Automate/FormSubmit ATTR=NAME:lname CONTENT=Tester
+'TAG 
+'Measure server reaction on submit
+STOPWATCH ID=SubmitData
+TAG POS=1 TYPE=BUTTON:SUBMIT FORM=ACTION:/Automate/FormSubmit ATTR=TXT:Submit
+STOPWATCH ID=SubmitData 
+
+STOPWATCH ID=Store1
+'Measure time for secure Online store to open
+'go to store
+URL GOTO=http://imacros.net/overview
+TAG POS=1 TYPE=A ATTR=TXT:*Buy*
+'open store =>  start timer
+TAG POS=1 TYPE=A:BUTTON ATTR=TXT:Buy<SP>Now 
+STOPWATCH ID=Store1
+
+'Measure time for second page  
+STOPWATCH ID=Total
+
+WAIT SECONDS=2
+URL GOTO=http://demo.imacros.net/Automate/StopWatchReport
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:form1 ATTR=ID:path CONTENT="In iMacros Downloads folder"

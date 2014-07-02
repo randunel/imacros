@@ -1,0 +1,13 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+TAB T=1     
+URL GOTO=http://demo.imacros.net/Automate/SaveAs
+WAIT SECONDS=3
+URL GOTO=http://www.iopus.com/imacros/
+'Save the page in different formats     
+SAVEAS TYPE=MHT FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}   
+SAVEAS TYPE=HTM FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}   
+SAVEAS TYPE=TXT FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}  
+SAVEAS TYPE=PNG FOLDER=* FILE=Time_{{!NOW:yyyymmdd_hhnnss}}.png   
+'Wait a few seconds 
+WAIT SECONDS=3
+URL GOTO=http://demo.imacros.net/Automate/SaveAs

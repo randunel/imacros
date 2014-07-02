@@ -1,0 +1,32 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+'Uses a Windows script to submit several datasets to a website, e. g. for filling an online database
+TAB T=1     
+' Specify input file (if !COL variables are used, IIM automatically assume a CSV format of the input file
+'CSV = Comma Separated Values in each line of the file
+SET !DATASOURCE Address.csv
+
+'Start at line 2 to skip the header in the file
+SET !LOOP 2
+'Increase the current position in the file with each loop 
+SET !DATASOURCE_LINE {{!LOOP}}
+' Fill web form   
+URL GOTO=http://demo.imacros.net/Automate/AutoDataEntry
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:fname CONTENT={{!COL1}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:lname CONTENT={{!COL2}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:address CONTENT={{!COL3}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:city CONTENT={{!COL4}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:zip CONTENT={{!COL5}}
+'
+'Note * is used to ignore leading and trailing blanks that could be in the input data
+'
+'The symbol '%' is used to select by VALUE as defined in the website select statement and not by its index.
+TAG POS=1 TYPE=SELECT FORM=ID:demo ATTR=NAME:state CONTENT=$*{{!COL6}}*
+'
+'The string ($) symbol is used to select the country by TEXT, not by its index.
+'Index would be the position of an entry in the combo box list, e. g. 161 for United States
+TAG POS=1 TYPE=SELECT FORM=ID:demo ATTR=NAME:country CONTENT=$*{{!COL7}}*
+'
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:email CONTENT={{!COL8}}
+TAG POS=1 TYPE=BUTTON:submit FORM=ID:demo ATTR=TXT:Submit
+
+TAG POS=1 TYPE=A ATTR=TXT:*Back* 

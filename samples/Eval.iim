@@ -1,0 +1,24 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+TAB T=1
+URL GOTO=http://demo.imacros.net/Automate/Eval
+'Wait a random number (1 to 5) of seconds
+SET !VAR1 EVAL("Math.floor(Math.random()*5 + 1);")
+WAIT SECONDS={{!VAR1}}
+SET !EXTRACT_TEST_POPUP NO
+'Extract the date
+TAG POS=1 TYPE=B ATTR=TXT:* EXTRACT=TXT
+'Check if time deviates more than 20 hours. If yes, stop macro with an error
+SET !VAR2 EVAL("var n_hours = 20, ms_in_hour = 60*60*1000, s=\"{{!EXTRACT}}\"; var now = new Date(); var deviation = now.getTime()-Date.parse(s);  if(deviation > n_hours*ms_in_hour ) MacroError(\"Time deviates more than 20 hours\")")
+'Clean the !EXTRACT variable for the next task
+SET !EXTRACT NULL
+'Count how many times the word "macro" appears on the page
+TAG POS=1 TYPE=DIV ATTR=ID:main EXTRACT=TXT
+SET !VAR1 EVAL("var m = '{{!EXTRACT}}'.match(/\\bMacro\\b/ig); if (!m) 'No word \"macro\" found.'; else 'There are '+m.length+' occurrences of the word \"macro\" on this page.';")
+PROMPT {{!VAR1}}
+'Clean the !EXTRACT variable for the next task
+SET !EXTRACT NULL
+'Extract the number in the input box
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:form1 ATTR=NAME:textfield EXTRACT=TXT
+'Check if extracted number (still a string, has to be parsed into a float!) lies between 99 and 101. 
+'Stop macro with an error if not.
+SET !VAR2 EVAL("var s=\"{{!EXTRACT}}\", d = parseFloat(s); if(d > 99 && d < 101) d; else MacroError(\"Value is not in the set range\");")

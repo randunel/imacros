@@ -1,0 +1,17 @@
+#tree-view {
+    width: 100%;
+    height: 80%;
+}
+
+#tree-iframe {
+    width: 100%;
+    height: 90%;
+}
+
+#button-ok {
+    background-image: url("ok.png");
+}
+
+#button-cancel {
+    background-image: url("cancel.png");
+}

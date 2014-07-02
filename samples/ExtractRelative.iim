@@ -1,0 +1,32 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+TAB T=1
+URL GOTO=http://demo.imacros.net/Automate/Extract2
+'Classic extraction will count the number of cells from the TOP of the page
+'extract 2 
+TAG POS=13 TYPE=TD ATTR=TXT:* EXTRACT=TXT
+'
+'Better to use positioning relative to the TAG command that
+'appears just before the TAG/EXTRACT command
+'
+TAG POS=1 TYPE=TH ATTR=TXT:MyTable
+'Postion is now R3, the 3rd cell after the text "Mytable"   
+TAG POS=R3 TYPE=TD ATTR=TXT:* EXTRACT=TXT 
+'Also extract the following numbers 4 and 5 
+TAG POS=R1 TYPE=TD ATTR=TXT:* EXTRACT=TXT 
+TAG POS=R1 TYPE=TD ATTR=TXT:* EXTRACT=TXT 
+
+'
+'Alternative solution
+'
+TAG POS=1 TYPE=TH ATTR=TXT:MyTable
+TAG POS=R3 TYPE=TD ATTR=TXT:* EXTRACT=TXT 
+TAG POS=1 TYPE=TH ATTR=TXT:MyTable
+TAG POS=R4 TYPE=TD ATTR=TXT:* EXTRACT=TXT
+TAG POS=1 TYPE=TH ATTR=TXT:MyTable 
+TAG POS=R5 TYPE=TD ATTR=TXT:* EXTRACT=TXT 
+
+'
+'Negative positioning => move to the LEFT and/or TOP of the anchor
+TAG POS=1 TYPE=TD ATTR=TXT:3   
+'Move two cells left => extract the number "1"
+TAG POS=R-2 TYPE=TD ATTR=TXT:* EXTRACT=TXT  

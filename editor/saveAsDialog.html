@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Save Macro as:</title>
+    <link rel="stylesheet" type="text/css"
+          href="../skin/common.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../skin/saveAsDialog.css" />
+    <script src="../utils.js"></script>
+    <script src="../AsyncFileIO.js"></script>
+    <script src="saveAsDialog.js"></script>
+  </head>
+  <body>
+    <div id="main-container" class="vbox">
+      <div class="box centered">
+        <span>Enter new macro name:</span>
+      </div>
+      <div class="box centered">
+        <input type="text" id="macro-name"></input>
+      </div>
+      <div id="tree-switcher-box" class="vbox">
+        <div class="box centered">
+          <span>Macro Storage:</span>
+        </div>
+        <div class="hbox centered">
+          <input id="radio-files-tree"
+                 class="tree-switcher"
+                 type="radio" name="tree-view"></input>
+          <label for="radio-files-tree">Files</label>
+          <input id="radio-bookmarks-tree"
+                 class="tree-switcher"
+                 type="radio" name="tree-view"></input>
+          <label for="radio-bookmarks-tree">Bookmarks</label>
+        </div>
+      </div>
+      <div id="buttonpack" class="hbox centered">
+        <div id="ok-button" class="button icon-button">
+          <span>OK</span>
+        </div>
+        <div id="cancel-button" class="button icon-button">
+          <span>Cancel</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

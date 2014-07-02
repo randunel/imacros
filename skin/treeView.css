@@ -1,0 +1,157 @@
+/*
+(c) Copyright 2009 iOpus Software GmbH - http://www.iopus.com
+*/
+
+#loading_message {
+    margin: 10px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 80%;
+}
+  
+body[treetype="bookmarks"] {
+    padding: 2px;
+    margin: 0px;
+    background-color: #ffffdc;
+}
+
+body[treetype="files"] {
+    padding: 2px;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: #3333f0;
+}
+
+a:active {
+    color: #3333f0;
+}
+
+/* li[selected="true"] { */
+/*     color: #cccccc; */
+/*     background-color: #333333; */
+/* } */
+
+span[selected="true"] {
+    color: #cccccc;
+    background-color: #333333 !important;
+}
+
+span[dragging_over="true"] {
+    border-bottom: 1px solid #3333f0;
+}
+
+a[dragging_over="true"] {
+    border-bottom: 1px solid #3333f0;
+}
+
+a[selected="true"] {
+    color: #cccccc;
+    background-color: #333333;
+}
+
+/* Turn off list bullets */
+ul.tree  li {
+    list-style: none;
+} 
+/* Control how "spaced out" the tree is */
+ul.tree, ul.tree ul , ul.tree li {
+    margin-left:5px;
+    padding:0px;
+}
+/* Provide space for our own "bullet" inside the LI */
+ul.tree li .bullet {
+    padding-left: 20px;
+}
+/* Show "bullets" in the links, depending on */
+/* the class of the LI that the link's in    */
+ul.tree li.folderOpen .bullet {
+    cursor: pointer;
+    background: url("folderOpen.png") center left no-repeat;
+}
+ul.tree  li.folderClosed  .bullet {
+    cursor: pointer;
+    background: url("folderClosed.png") center left no-repeat;
+}
+ul.tree li.macro .bullet {
+    cursor: default;
+    background: url("imglog.png") center left no-repeat;
+}
+/* Sublists are visible or not based on class of parent LI */
+ul.tree  li.folderOpen    ul { display: block; }
+ul.tree  li.folderClosed  ul { display: none; }
+
+ul.tree {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 80%;
+    height: 95%;
+    width: 100%;
+    margin: 0px;
+    white-space: nowrap;
+}
+
+.parentFolder {
+    padding-left: 20px;
+    cursor: pointer;
+    background: url("folder-up.png") center left no-repeat;
+}
+
+.MyComputer {
+    padding-left: 20px;
+    background: url("mycomputer.png") center left no-repeat;
+}
+
+
+.Disk {
+    padding-left: 40px;
+    cursor: pointer;
+    background: url("disk.png") center left no-repeat;
+}
+
+/* Context menu */
+#context-menu {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 80%;
+    border: 1px solid grey;
+    background-color: white;
+    display: none;
+    position: absolute;
+}
+
+.context-menu-ul {
+    margin: 0px;
+    padding: 7px;
+    list-style-type: none;
+}
+
+.context-menu-ul > li {
+    margin: 5px;
+}
+
+.context-menu-sep {
+    border-top: 1px solid gray;
+    margin-top: 0.5em;
+    margin-bottom: -0.5em;
+    padding: 0px;
+    height: 0px;
+    list-style-type: none;
+}
+
+.context-menu-item:hover {
+    cursor: hand;
+    text-decoration: underline;
+}
+
+#no-file-io-message {
+    text-align: justify;
+    padding: 2px;
+    font-family: Arial;
+    font-size: 80%;
+}

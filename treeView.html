@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>iMacros</title>
+    <link rel="stylesheet" type="text/css"
+          href="skin/treeView.css" />
+    <script src="treeView.js"></script>
+    <script src="utils.js"></script>
+    <script src="mktree.js"></script>
+
+  </head>
+  <body treetype="bookmarks">
+    <div id="context-menu" hidden="true">
+      <ul class="context-menu-ul">
+        <!-- <li><a id="context-run" href="#">Run</a></li> -->
+        <li id="context-edit" class="context-menu-item">
+          <span>Edit Macro</span>
+        </li>
+        <li  id="context-convert" class="context-menu-item">
+          <span>Convert Macro</span>
+        </li>
+        <li  id="context-makedir" class="context-menu-item">
+          <span>New Folder</span>
+        </li>
+        <li id="context-rename" class="context-menu-item">
+          <span>Rename</span>
+        </li>
+        <li id="context-delete" class="context-menu-item">
+          <span>Remove</span>
+        </li>
+        <li class="context-menu-sep"></li>
+        <li id="context-refresh" class="context-menu-item">
+          <span>Refresh Tree</span>
+        </li>
+      </ul>
+    </div>
+    
+    <ul id="tree" class="tree">
+    </ul>
+    <div id="imacros-bookmark-div" style="display:none">
+      <textarea id="imacros-macro-container"></textarea>
+    </div>
+  </body>
+</html>

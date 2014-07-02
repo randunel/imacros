@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Alertfox Login Dialog</title>
+    <link rel="stylesheet" type="text/css"
+          href="skin/common.css" />
+    <link rel="stylesheet" type="text/css"
+          href="skin/AlertFoxLoginDialog.css" />
+    <script src="utils.js"></script>
+    <script src="SOAPClient.js"></script>
+    <script src="AlertFoxLoginDialog.js"></script>
+  </head>
+  <body>
+
+    <div class="hbox centered">
+    <div id="container" class="vbox centered">
+      <div id="message-container" class="box">
+        <span id="message">Enter AlertFox User Info</span>
+      </div>
+
+      <table id="username-and-password">
+        <tr>
+          <td align="right">User name:</td>
+          <td>
+            <input type="text" id="af-username"></input>
+          </td>
+          <td rowspan="2">
+            <div id="check-credentials-button"
+                 class="button" >
+              <div class="vbox">
+                <div class="hbox centered">Check</div>
+                <div class="hbox centered">Credentials</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Password:</td>
+          <td>
+            <input type="password" id="af-password"></input>
+          </td>
+        </tr>
+      </table>
+      <div id="save-credentials-checkbox-container">
+        <input type="checkbox" id="save-credentials-checkbox"
+               name="save-credentials-checkbox"></input>
+        <label for="save-credentials-checkbox">Save Credentials</label>
+      </div>
+      <div class="hbox">
+        <span id="sign-up-link" class="a-link">Sign Up</span><span> for a 30-day trial account</span>
+      </div>
+      
+      <div id="buttons" class="hbox centered">
+        <div id="ok-button" class="button icon-button">
+          <span>OK</span>
+        </div>
+        <div id="cancel-button" class="button icon-button">
+          <span>Cancel</span>
+        </div>
+      </div>
+
+    </div> <!-- container -->
+    </div>
+  </body>
+</html>

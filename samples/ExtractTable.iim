@@ -1,0 +1,23 @@
+VERSION BUILD=5301016 RECORDER=CR
+TAB T=1    
+'The name of file to store the extracted information is specified with the FILE= attribute of the SAVEAS command
+'The FOLDER=* attribute indicates that the default folder is used. You can specify another folder with FOLDER=c:\yourfolder
+
+URL GOTO=http://demo.imacros.net/Automate/ExtractDemo
+
+'
+'Note: This macro can run the iMacros Browser, Firefox and the IE-Plugin 
+'But the EXTRACT button to start the extraction wizard is only in the IM Browser
+'
+'
+
+'The first table is the list of currencies
+'=> Extract data of **2nd** table (POS=2) on page  
+
+TAG POS=2 TYPE=TABLE ATTR=TXT:* EXTRACT=TXT
+
+'The SAVEAS statement was added manually to write the extracted table to a file
+'(The alternative way to get the extracted data is the Scripting Interface)
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=mytable_{{!NOW:yymmdd_hhnnss}}.csv
+WAIT SECONDS=3
+URL GOTO=http://demo.imacros.net/Automate/OK 

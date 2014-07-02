@@ -1,0 +1,148 @@
+<html>
+  <head><title>iMacros Settings</title></head>
+  <script type="text/javascript" src="utils.js"> </script>
+  <script type="text/javascript" src="options.js"> </script>
+  <link rel="stylesheet" type="text/css"
+        href="skin/common.css" />
+  <link rel="stylesheet" type="text/css"
+        href="skin/options.css" />
+  <body>
+    <span id="title">iMacros Settings</span>
+    <div id="common" class="settings-container">
+      <span class="header">Common settings</span>
+      <div id="dock-panel-box">
+        <input id="dock-panel" type="checkbox"></input>
+        <span>Dock iMacros Panel to browser window</span>
+      </div>
+      <div id="before-play-box">
+        <input id="show-before-play-dialog" type="checkbox"></input>
+        <span> Show Edit Dialog for Bookmarks
+          <span id="more-info-bp" class="a-link"> (More Info) </span>
+        </span>
+      </div>
+      <!-- <div id="eval-allowed-box"> -->
+      <!--   <input id="allow-eval-command" type="checkbox" -->
+      <!--          onchange="onEvalAllowed();"/> -->
+      <!--   <span> Allow EVAL command in macros -->
+      <!--     <a href="javascript:link('http://wiki.imacros.net/EVAL')"> -->
+      <!--       (More Info) -->
+      <!--     </a> -->
+      <!--   </span> -->
+      <!-- </div> -->
+      <div id="profiler-enabled-box">
+        <input id="enable-profiler" type="checkbox"></input>
+        <span>Profile macro performance
+          <span id="more-info-profiler" class="a-link"> (More Info) </span>
+        </span>
+      </div>
+    </div>
+
+    <div id="path-settings" class="settings-container">
+      <span class="header">Path settings</span>
+      <div>
+        <div class="vbox">
+          <span> Macros directory path: </span>
+            <div class="hbox">
+              <div>
+                <input id="defsavepath" class="path-field" type="text"> </input>
+              </div>
+              <div id="defsavepath-browse" class="button browse-button"></div>
+            </div>
+        </div>
+      </div>
+      <div>
+        <div class="vbox">
+          <span> Datasources directory path: </span>
+          <div class="hbox">
+            <div>
+              <input id="defdatapath" class="path-field" type="text"></input>
+            </div>
+            <div id="defdatapath-browse" class="button browse-button"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="vbox">
+          <span> Downloads directory path: </span>
+          <div class="hbox">
+            <div>
+              <input id="defdownpath" class="path-field" type="text"></input>
+            </div>
+            <div id="defdownpath-browse" class="button browse-button"></div>
+          </div>
+        </div>
+      </div>
+      <!-- TODO: logpath is used as a root directory for e.g. Profiler.xsl file
+           storage so we need to name that directory somehow -->
+      <!-- <div> -->
+      <!--   <div class="vbox"> -->
+      <!--     <span> Logs directory path: </span> -->
+      <!--     <div class="hbox"> -->
+      <!--       <input id="deflogpath" class="path-field" type="text"></input> -->
+      <!--       <div id="deflogpath-browse" class="button browse-button"></div> -->
+      <!--     </div> -->
+      <!--   </div> -->
+      <!-- </div> -->
+    </div>
+
+    <div id="security" class="settings-container">
+      <span class="header">Security settings</span>
+      <div style="margin-top: 10px">
+        &nbsp;A master password is used to encrypt and decrypt all stored 
+        website passwords. The websites passwords are encrypted using strong 
+        encryption and stored inside the macro text file.
+      </div>
+      <div id="type_no-box" class="radio-container">
+        <input type="radio" id="type_no" name="encryption_type"></input>
+        <label for="type_no">Do not encrypt passwords</label>
+        <div class="radio-description">
+          Passwords are stored as plain text in the macros.</div>
+      </div>
+      <div id="type_stored-box" class="radio-container">
+        <input type="radio" id="type_stored" name="encryption_type"></input>
+        <label for="type_stored">Enter master password here to store it.</label>
+        <div class="radio-description">
+          Enter master password to store:
+          <input type="password" id="stored-password"></input>
+        </div>
+      </div>
+      <div id="type_tmpkey-box" class="radio-container">
+        <input type="radio" id="type_tmpkey" name="encryption_type">
+        </input>
+      <label for="type_tmpkey">
+        Enter a temporary master password here if you do NOT want to store it. 
+	You need to re-enter it every time you start iMacros and use a website 
+	password for the first time. More secure, but less convenient.
+      </label>
+
+      <div class="box">
+        <div id="tmpkey-button" class="button">
+          <span>Enter Master Password</span>
+        </div>
+      </div>
+      </div>
+      <div style="margin-top:30px;">
+          Note: The encryption can be also changed in each macro with SET 
+	  !ENCRYPTION NO / STOREDKEY / TMPKEY
+      </div>
+      <div style="margin-top:10px;">
+          Create or decrypt password strings manually:
+          <span id="password-tool-page" class="a-link"> Password Tool Page</span>
+      </div>
+      <div style="margin-top:12px;margin-left:60px;margin-bottom:7px">
+	  <span id="more-info-encryption" class="a-link"> More info about encryption</span>
+      </div>
+    </div>
+    <div id="alertfox" class="settings-container">
+      <span class="header">AlertFox Settings</span>
+      <div style="margin-top: 10px">
+        &nbsp;Run your macros in the cloud and monitor complete online process
+      </div>
+      <div id="af-login-button" class="button">
+        <span>Enter AlertFox Credentials</span>
+      </div>
+      <span id="whatis-af" class="a-link">What is AlertFox?</span>
+    </div>
+    <span id="test"></span>
+  </body>
+</html>

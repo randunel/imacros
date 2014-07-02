@@ -1,0 +1,49 @@
+td,label,span,a {
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+#check-credentials-button {
+    height: 80%;
+}
+
+#check-credentials-button[waiting='true'] {
+    padding-left: 25px;
+    color: #bbbbbb;
+    cursor: default;
+    background-image: url('waiting_16x16.gif');
+    background-repeat: no-repeat;
+    background-position: 3px;
+}
+
+#check-credentials-button[checked='true'] {
+    padding-left: 25px;
+    background-image: url('ok.png');
+    background-repeat: no-repeat;
+    background-position: 3px;
+}
+
+#message-container {
+    padding: 15px;
+}
+
+#message {
+    font-weight: bold;
+}
+
+#save-credentials-checkbox-container {
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+#ok-button {
+    background-image: url("ok.png");
+}
+
+#cancel-button {
+    background-image: url("cancel.png");
+}
+
+#buttons {
+    margin-top: 15px;
+}

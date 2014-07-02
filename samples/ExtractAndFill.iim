@@ -1,0 +1,23 @@
+﻿VERSION BUILD=5301016 RECORDER=CR
+TAB T=1
+
+URL GOTO=http://demo.imacros.net/Automate/ExtractDemo
+TAG POS=39 TYPE=TD ATTR=TXT:* EXTRACT=TXT
+SET !VAR1 {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAG POS=40 TYPE=TD ATTR=TXT:* EXTRACT=TXT
+SET !VAR2 {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAG POS=41 TYPE=TD ATTR=TXT:* EXTRACT=TXT
+SET !VAR3 {{!EXTRACT}}
+SET !EXTRACT NULL
+TAB OPEN
+TAB T=2
+'Now fill them in a form. This is only one example. You could use it also as part of link  
+URL GOTO=http://demo.imacros.net/Automate/TestForm1   
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:demo ATTR=NAME:name CONTENT=***Extract<SP>and<SP>Fill<SP>Demo*** 
+'
+'The variables are part of the CONTENT tag. You could use them as part of link
+TAG POS=1 TYPE=TEXTAREA FORM=ID:demo ATTR=NAME:Remarks CONTENT=Extraction<SP>results:<BR><BR>One<SP>dollar<SP>costs<SP>{{!VAR1}}<SP>EURO,<SP>{{!VAR2}}<SP>Pounds<SP>or<SP>{{!VAR3}}<SP>Yen. 
